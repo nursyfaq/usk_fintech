@@ -13,4 +13,9 @@ class TopupController extends Controller
     public function check (){
         return view("pages.bank.index");
     }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
+    }
 }

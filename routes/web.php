@@ -5,6 +5,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\TopupController;
+use App\Http\Controllers\BankController;
+use Illuminate\Support\Facades\Auth;
+
 
 
 /*
@@ -49,4 +52,16 @@ Route::prefix("topup")->group(function(){
 
 Route::prefix('transaksi')->group(function(){
     Route::get("/", [TransaksiController::class, 'index'])->name('transaksi.index');
+    Route::post("/create", [TransaksiController::class, 'store'])->name("transaksi.store");
 });
+
+Route::prefix("bank")->group(function(){
+    Route::get("/", [BankController::class, 'get_transaksi'])->name("bank.index");
+
+});
+
+Route::prefix("transaction")->group(function(){
+    Route::get("/", [TransactionController::class, 'index'])->name("transaction.index");
+    Route::post("/create", [TransactionController::class, 'store'])->name("transaction.create");
+});
+

@@ -29,7 +29,7 @@ $page= 'Home';?>
                         <ul>
                             {{-- <li><a href="{{ route('topup') }}">Top Up</a></li>
                         <li><a href="{{ route('transaksi') }}">Jajan</a><li></li></li> --}}
-                        <li><a href={{ route('topup.check') }}>TopUpList</a></li>
+                        <li><a href={{ route('bank.index') }}>TopUpList</a></li>
                         </ul>
                     @endif
 
